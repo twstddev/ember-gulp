@@ -9,6 +9,9 @@
   "author": "your name here",
   "license": "WTFPL",
   "devDependencies": {
-    "gulp": "^3.8.6"
+    "gulp": "^3.8.6",
+    "gulp-load": "^0.1.1",
+    "gulp-load-plugins": "^0.5.3",
+    "run-sequence": "^0.3.6"
   }
 }
