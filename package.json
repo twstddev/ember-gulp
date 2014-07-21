@@ -14,6 +14,7 @@
     "gulp": "^3.8.6",
     "gulp-load": "^0.1.1",
     "gulp-load-plugins": "^0.5.3",
+    "gulp-open": "^0.2.8",
     "run-sequence": "^0.3.6",
     "tiny-lr": "0.0.9"
   }
