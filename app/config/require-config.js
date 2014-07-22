@@ -3,7 +3,7 @@ require.config( {
 	paths : {
 		"jquery" : "libs/jquery/dist/jquery",
 		"jquery-migrate" : "libs/jquery-migrate/jquery-migrate",
-		"handlebars" : "libs/handlebars/runtime",
+		"handlebars" : "libs/handlebars/handlebars.runtime",
 		"ember" : "libs/ember/ember",
 		"ember-data" : "libs/ember-data/ember-data"
 	},

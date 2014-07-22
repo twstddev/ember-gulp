@@ -7,9 +7,9 @@ require( [ "../config/require-config" ], function() {
 	// implicitly load main application dependencies
 	require( [ "jquery-migrate" ], function() {
 		// load application
-		//require( [ "js/src/application" ], function( Application ) {
-			//Application.init( {} );
-		//} );
+		require( [ "js/src/application" ], function( Application ) {
+			Application.init( {} );
+		} );
 	} );
 //>>excludeStart( "configExclude", pragmas.configExclude );
 } );
