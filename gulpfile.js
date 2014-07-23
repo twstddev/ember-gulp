@@ -37,8 +37,13 @@ gulp.loadTasks( __dirname );
 
 gulp.task( "development", function( done ) {
 	run_sequence(
+		"karma:watch",
 		"livereload",
 		"open",
 		done
 	);
 } );
+
+gulp.task( "test", [
+	"karma:test"
+] );
