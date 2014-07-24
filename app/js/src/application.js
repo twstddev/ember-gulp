@@ -7,9 +7,10 @@
 define( [
 	"js/include/views/body_view",
 	"js/include/views/header",
+	"js/include/views/footer",
 	"ember"
 	],
-	function( BodyView, HeaderView ) {
+	function( BodyView, HeaderView, FooterView ) {
 
 	/**
 	 * @brief Creates Ember application and
@@ -25,7 +26,8 @@ define( [
 	 */
 	var bootstrap_application = function( config ) {
 		var body_view = BodyView.create( {
-			header : HeaderView
+			header : HeaderView,
+			footer : FooterView
 		} );
 
 		body_view.append();

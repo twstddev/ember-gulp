@@ -5,7 +5,9 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 
 
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "view.header", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
-  data.buffer.push("\r\n\r\n");
+  data.buffer.push("\r\n");
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "view.footer", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push("\r\n");
   return buffer;
   
 });; });
