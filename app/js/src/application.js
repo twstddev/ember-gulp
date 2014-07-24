@@ -5,9 +5,11 @@
  * components and modules.
  */
 define( [
+	"js/include/views/body_view",
+	"js/include/views/header",
 	"ember"
 	],
-	function() {
+	function( BodyView, HeaderView ) {
 
 	/**
 	 * @brief Creates Ember application and
@@ -15,6 +17,18 @@ define( [
 	 */
 	var create_ember_application = function( config ) {
 		App = Ember.Application.create();
+	};
+
+	/**
+	 * @brief Creates main application elements and
+	 * components.
+	 */
+	var bootstrap_application = function( config ) {
+		var body_view = BodyView.create( {
+			header : HeaderView
+		} );
+
+		body_view.append();
 	};
 	
 	/**
@@ -31,6 +45,7 @@ define( [
 			 */
 			init : function( config ) {
 				create_ember_application( config );
+				bootstrap_application( config );
 			}
 		}
 	} )();

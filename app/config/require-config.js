@@ -19,7 +19,7 @@ require.config( {
 		},
 
 		"handlebars" : {
-			exports : "Handlebards"
+			exports : "Handlebars"
 		},
 
 		"ember" : {
