@@ -5,15 +5,14 @@
  * components and modules.
  */
 define( [
-	"js/include/views/body_view",
-	"js/include/views/header",
+	"js/modules/header/main",
 	"js/include/views/footer",
 	"js/include/views/content",
-	"ember"
+	"js/templates/application",
+	"ember-data"
 	],
 	function(
-		BodyView,
-		HeaderView,
+		HeaderModule,
 		FooterView,
 		ContentView
 	) {
@@ -24,6 +23,8 @@ define( [
 	 */
 	var create_ember_application = function( config ) {
 		App = Ember.Application.create();
+		App.vent = Ember.Object.extend( Ember.Evented, {} ).create();
+		App.ApplicationAdapter = DS.FixtureAdapter;
 	};
 
 	/**
@@ -31,13 +32,10 @@ define( [
 	 * components.
 	 */
 	var bootstrap_application = function( config ) {
-		var body_view = BodyView.create( {
-			header : HeaderView,
-			footer : FooterView,
-			content : ContentView
-		} );
+		var header_module = HeaderModule.create();
 
-		body_view.append();
+		App.FooterView = FooterView;
+		App.ContentView = ContentView
 	};
 	
 	/**

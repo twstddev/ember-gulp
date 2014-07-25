@@ -1,0 +1,9 @@
+<ul>
+	{{#each item in controller.items}}
+	<li>
+		<a {{bind-attr href="item.slug"}} {{action "clicked" item.slug}}>
+			{{ item.title }}
+		</a>
+	</li>
+	{{/each}}
+</ul>

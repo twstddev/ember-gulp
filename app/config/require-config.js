@@ -27,6 +27,9 @@ require.config( {
 			exports : "Ember"
 		},
 
-		"ember-data" : [ "ember" ] 
+		"ember-data" : {
+			deps : [ "ember" ],
+			exports : "DS"
+		}
 	}
 } );
