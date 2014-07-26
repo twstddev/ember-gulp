@@ -1,9 +1,9 @@
 <ul>
 	{{#each item in controller.model itemController="menuItem"}}
 	<li>
-		<a {{bind-attr href="item.slug"}} {{action "clicked"}}>
-			{{ item.title }}
-		</a>
+		{{#link-to "page" item.slug}}
+			{{item.title}}
+		{{/link-to}}
 	</li>
 	{{/each}}
 </ul>

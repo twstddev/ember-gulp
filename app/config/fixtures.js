@@ -8,7 +8,7 @@ define( [], function() {
 			{
 				id : 1,
 				title : "Home",
-				slug : "/"
+				slug : "home"
 			},
 			{
 				id : 2,
@@ -19,6 +19,26 @@ define( [], function() {
 				id : 3,
 				title : "About",
 				slug : "about"
+			}
+		],
+		pages : [
+			{
+				id : 1,
+				slug : "home",
+				title : "Home page",
+				content : "Home page content"
+			},
+			{
+				id : 2,
+				slug : "contact",
+				title : "Contact page",
+				content : "Contact page content"
+			},
+			{
+				id : 3,
+				slug : "about",
+				title : "About page",
+				content : "About page content"
 			}
 		]
 	};

@@ -6,15 +6,15 @@
  */
 define( [
 	"js/modules/header/main",
+	"js/modules/pages/main",
 	"js/include/views/footer",
-	"js/include/views/content",
 	"js/templates/application",
 	"ember-data"
 	],
 	function(
 		HeaderModule,
-		FooterView,
-		ContentView
+		PagesModule,
+		FooterView
 	) {
 
 	/**
@@ -23,11 +23,23 @@ define( [
 	 */
 	var create_ember_application = function( config ) {
 		App = Ember.Application.create();
+	};
+
+	/**
+	 * @brief Creates main application elements and
+	 * components.
+	 */
+	var bootstrap_application = function( config ) {
+		// register global event system
 		App.vent = Ember.Object.extend( Ember.Evented, {} ).create();
+
+		// make sure that we use pushstate by default with fallback
+		// on older browsers
 		App.Router.reopen( {
 			location : "auto"
 		} );
 
+		// add main routes for pages
 		App.Router.map( function() {
 			this.resource( "page", { path : "/" } );
 			this.resource( "page", { path : "/:slug" } );
@@ -41,18 +53,21 @@ define( [
 			}
 		} );
 
-		App.ApplicationAdapter = DS.FixtureAdapter;
-	};
+		// for this example boilerplate use hard-coded fixtures
+		App.ApplicationAdapter = DS.FixtureAdapter.extend( {
+			queryFixtures : function( fixtures, query, type ) {
+				// I trust myself at this point, so no validation needed
+				var query_key = Ember.keys( query )[ 0 ];
 
-	/**
-	 * @brief Creates main application elements and
-	 * components.
-	 */
-	var bootstrap_application = function( config ) {
+				return fixtures.filterBy( query_key, query[ query_key ] );
+			}
+		} );
+
+		// define main components of the application
 		var header_module = HeaderModule.create();
+		var pages_module = PagesModule.create();
 
 		App.FooterView = FooterView;
-		App.ContentView = ContentView
 	};
 	
 	/**
