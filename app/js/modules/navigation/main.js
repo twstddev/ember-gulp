@@ -1,11 +1,13 @@
 define( [ 
 	"js/include/controllers/menu",
+	"js/include/controllers/menu_item",
 	"js/include/views/navigation",
 	"js/include/models/menu_item",
 	"ember"
 	],
 	function( 
 		MenuController,
+		MenuItemController,
 		NavigationView,
 		MenuItem
 	) {
@@ -20,6 +22,7 @@ define( [
 		init : function() {
 			App.MenuItem = MenuItem;
 
+			App.MenuItemController = MenuItemController;
 			App.NavigationController = MenuController;
 			App.NavigationView = NavigationView;
 		}

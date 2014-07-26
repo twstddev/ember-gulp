@@ -24,6 +24,23 @@ define( [
 	var create_ember_application = function( config ) {
 		App = Ember.Application.create();
 		App.vent = Ember.Object.extend( Ember.Evented, {} ).create();
+		App.Router.reopen( {
+			location : "auto"
+		} );
+
+		App.Router.map( function() {
+			this.resource( "page", { path : "/" } );
+			this.resource( "page", { path : "/:slug" } );
+		} );
+
+		// we need to initialize global navigation controller
+		// as it is accessible from any page and route
+		App.ApplicationRoute = Ember.Route.extend( {
+			setupController : function( controller, model ) {
+				this.controllerFor( "navigation" ).set( "model", this.store.find( "menuItem" ) );
+			}
+		} );
+
 		App.ApplicationAdapter = DS.FixtureAdapter;
 	};
 
