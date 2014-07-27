@@ -61,6 +61,7 @@ gulp.task( "default", function( done ) {
 		"usemin",
 		"htmlmin",
 		"cssmin",
+		"scripts",
 		done
 	);
 } );

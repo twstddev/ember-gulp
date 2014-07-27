@@ -25,6 +25,7 @@
     "gulp-load": "^0.1.1",
     "gulp-load-plugins": "^0.5.3",
     "gulp-open": "^0.2.8",
+    "gulp-rename": "^1.2.0",
     "gulp-usemin": "^0.3.7",
     "karma": "^0.12.17",
     "karma-chai": "^0.1.0",
