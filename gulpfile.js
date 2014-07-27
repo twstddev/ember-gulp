@@ -62,6 +62,7 @@ gulp.task( "default", function( done ) {
 		"htmlmin",
 		"cssmin",
 		"scripts",
+		"requirejs",
 		done
 	);
 } );
