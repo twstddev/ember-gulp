@@ -60,6 +60,7 @@ gulp.task( "default", function( done ) {
 		"imagemin",
 		"usemin",
 		"htmlmin",
+		"cssmin",
 		done
 	);
 } );
