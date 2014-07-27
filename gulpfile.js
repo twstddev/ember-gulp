@@ -50,3 +50,9 @@ gulp.task( "development", function( done ) {
 gulp.task( "test", [
 	"karma:test"
 ] );
+
+gulp.task( "default", function( done ) {
+	run_sequence(
+		done
+	);
+} );
