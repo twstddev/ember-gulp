@@ -53,6 +53,10 @@ gulp.task( "test", [
 
 gulp.task( "default", function( done ) {
 	run_sequence(
+		"clean:build",
+		"clean:dist",
+		"compass:build",
+		"handlebars:build",
 		done
 	);
 } );
