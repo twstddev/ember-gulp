@@ -58,6 +58,7 @@ gulp.task( "default", function( done ) {
 		"compass:build",
 		"handlebars:build",
 		"imagemin",
+		"usemin",
 		done
 	);
 } );
