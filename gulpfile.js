@@ -59,6 +59,7 @@ gulp.task( "default", function( done ) {
 		"handlebars:build",
 		"imagemin",
 		"usemin",
+		"htmlmin",
 		done
 	);
 } );
