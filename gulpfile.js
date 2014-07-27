@@ -27,7 +27,7 @@ GLOBAL.get_application_path = function( path ) {
  * @brief Calms down thrown errors.
  * Logs them instead of stopping gulp execution.
  */
-GLOBAL.outpu_error = function( error ) {
+GLOBAL.output_error = function( error ) {
 	console.log( error.message );
 };
 
@@ -38,6 +38,7 @@ gulp.loadTasks( __dirname );
 gulp.task( "development", function( done ) {
 	run_sequence(
 		"clean:build",
+		"compass",
 		"handlebars",
 		"karma:watch",
 		"livereload",
