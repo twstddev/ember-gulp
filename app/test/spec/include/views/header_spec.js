@@ -21,7 +21,10 @@ describe( "HeaderView", function() {
 
 	afterEach( function( done ) {
 		Ember.run( function() {
-			header_view.remove();
+			if ( header_view ) {
+				header_view.remove();
+			}
+
 			header_view = null
 
 			done();

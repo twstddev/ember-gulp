@@ -37,6 +37,7 @@ gulp.loadTasks( __dirname );
 
 gulp.task( "development", function( done ) {
 	run_sequence(
+		"clean:build",
 		"handlebars",
 		"karma:watch",
 		"livereload",

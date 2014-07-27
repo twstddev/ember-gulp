@@ -1,7 +1,9 @@
 define( [ "js/src/application" ], function( Application ) {
 	describe( "Application", function() {
 		beforeEach( function( done ) {
-			Ember.run( done );
+			Ember.run( function() {
+				done();
+			} );
 		} );
 
 		it( "should be an instance of Object", function() {

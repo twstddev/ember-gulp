@@ -9,4 +9,4 @@ dist/
 app/css/
 app/libs/
 app/coverage/
-app/js/templates.js
+app/js/templates/
